@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le guide qui transforme ton téléphone en professeur d'anglais — English Fluency Lab</title>
+<meta name="description" content="Ton guide de survie pour booster ton anglais uniquement avec ton téléphone. Méthode progressive, compatible iPhone & Android.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Tu as mis ton téléphone en anglais... et tu t'es perdu ?">
+<meta property="og:description" content="Ce guide t'accompagne pas à pas pour transformer ton smartphone en professeur d'anglais — sans te sentir dépassé.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --green:#22C55E;
+    --green-dark:#15803D;
+    --ink:#111827;
+    --white:#FFFFFF;
+    --grey-light:#F9FAFB;
+    --red:#DC2626;
+    --amber:#D97706;
+    --body-text:#374151;
+    --max:680px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Inter',Arial,sans-serif;
+    color:var(--body-text);
+    line-height:1.7;
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:78px; /* room for sticky mobile CTA */
+  }
+
+  h1,h2,h3{font-family:'Poppins',Arial,sans-serif;color:var(--ink);}
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  section{padding:64px 0;}
+  .bg-white{background:var(--white);}
+  .bg-grey{background:var(--grey-light);}
+  .bg-dark{background:linear-gradient(160deg,#0B0F0C 0%, var(--ink) 65%);}
+
+  img{max-width:100%;display:block;border-radius:14px;}
+
+  /* ---------- Eyebrow / badge ---------- */
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(34,197,94,0.12);
+    color:var(--green-dark);
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    padding:7px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  .badge.on-dark{
+    background:rgba(34,197,94,0.18);
+    color:#86EFAC;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    color:#fff;
+    background:linear-gradient(160deg,#0B0F0C 0%, var(--ink) 65%);
+    padding:56px 0 60px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 85% 0%, rgba(34,197,94,0.25), transparent 55%),
+      repeating-linear-gradient(115deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 64px);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .hero h1{
+    font-size:clamp(28px,7vw,40px);
+    font-weight:800;
+    line-height:1.18;
+    margin-bottom:18px;
+    letter-spacing:-0.01em;
+    color:#fff;
+  }
+  .hero h1 .lost{
+    color:#FCA5A5;
+    text-decoration:line-through;
+    text-decoration-color:rgba(252,165,165,0.5);
+  }
+  .hero .subtitle{
+    font-size:17px;
+    color:#D1D5DB;
+    max-width:520px;
+    margin-bottom:26px;
+  }
+  .hero .intro{
+    font-size:15.5px;
+    color:#9CA3AF;
+    max-width:520px;
+    margin-bottom:34px;
+  }
+  .hero .intro strong{color:#E5E7EB;}
+
+  .price-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:22px;
+    flex-wrap:wrap;
+  }
+  .price-tag{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    color:#fff;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.15);
+    padding:8px 16px;
+    border-radius:10px;
+  }
+  .price-tag span{color:#86EFAC;}
+
+  /* ---------- CTA buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:17px;
+    color:#fff;
+    background:var(--green);
+    border:none;
+    border-radius:10px;
+    padding:18px 32px;
+    text-align:center;
+    text-decoration:none;
+    box-shadow:0 4px 14px rgba(34,197,94,0.35);
+    cursor:pointer;
+    width:100%;
+    transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 6px 18px rgba(34,197,94,0.45);}
+  .btn:focus-visible{outline:3px solid #86EFAC;outline-offset:3px;}
+  .btn-wide{max-width:420px;}
+  .btn-arrow{font-size:19px;line-height:1;}
+
+  .micro-cta{
+    font-size:13px;
+    color:#9CA3AF;
+    margin-top:12px;
+    text-align:center;
+  }
+  .micro-cta.on-light{color:#6B7280;}
+
+  /* ---------- transitions ---------- */
+  .transition{
+    text-align:center;
+    font-family:'Poppins',sans-serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:15.5px;
+    color:#9CA3AF;
+    padding:30px 0 6px;
+  }
+  .transition.on-light{color:#6B7280;}
+  .bg-white + .transition, .bg-grey + .transition{margin-top:-20px;}
+
+  /* ---------- Section headers ---------- */
+  .eyebrow-num{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    color:var(--green-dark);
+    letter-spacing:0.08em;
+    margin-bottom:10px;
+  }
+  h2.title{
+    font-size:clamp(24px,5.5vw,30px);
+    font-weight:700;
+    line-height:1.28;
+    margin-bottom:18px;
+  }
+
+  /* ---------- Section 02: Identification ---------- */
+  .frustration-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin:26px 0 30px;
+  }
+  .frustration-item{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    background:#fff;
+    border:1px solid #FEE2E2;
+    border-radius:12px;
+    padding:14px 16px;
+    font-size:15.5px;
+    color:var(--ink);
+  }
+  .frustration-item .ic{color:var(--red);font-size:17px;line-height:1.5;flex-shrink:0;}
+
+  .validation-box{
+    background:var(--ink);
+    color:#F3F4F6;
+    border-radius:14px;
+    padding:24px 22px;
+    font-size:15.5px;
+  }
+  .validation-box strong{color:#86EFAC;}
+
+  /* ---------- Section 03: Before/After ---------- */
+  .ba-grid{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  @media(min-width:680px){
+    .ba-grid{flex-direction:row;}
+    .ba-grid > div{flex:1;}
+  }
+  .ba-card{
+    border-radius:16px;
+    padding:24px 22px 26px;
+  }
+  .ba-card.before{
+    background:#1F1414;
+    border:1px solid rgba(220,38,38,0.3);
+  }
+  .ba-card.after{
+    background:#0E1F14;
+    border:1px solid rgba(34,197,94,0.35);
+  }
+  .ba-label{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:0.03em;
+    margin-bottom:14px;
+  }
+  .ba-card.before .ba-label{color:#FCA5A5;}
+  .ba-card.after .ba-label{color:#86EFAC;}
+  .ba-card ul{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:8px;}
+  .ba-card li{font-size:14.5px;color:#D1D5DB;display:flex;gap:8px;}
+  .ba-card.before li::before{content:"−";color:#FCA5A5;font-weight:700;}
+  .ba-card.after li::before{content:"+";color:#86EFAC;font-weight:700;}
+  .ba-quote{
+    font-size:14px;
+    font-style:italic;
+    color:#9CA3AF;
+    border-top:1px solid rgba(255,255,255,0.08);
+    padding-top:14px;
+  }
+
+  /* ---------- Section 04: Coach story ---------- */
+  .story-text p{margin-bottom:16px;font-size:15.5px;}
+  .story-text strong{color:var(--ink);}
+  .coach-card{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    background:var(--grey-light);
+    border-radius:14px;
+    padding:18px;
+    margin-top:28px;
+  }
+  .coach-avatar{
+    width:64px;height:64px;border-radius:50%;flex-shrink:0;
+    background:linear-gradient(135deg,var(--green),var(--green-dark));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:22px;
+  }
+  .coach-name{font-family:'Poppins',sans-serif;font-weight:700;color:var(--ink);font-size:15.5px;}
+  .coach-title{font-size:13.5px;color:#6B7280;margin-bottom:6px;}
+  .coach-line{font-size:14px;color:var(--body-text);font-style:italic;}
+
+  /* ---------- Section 05: Solution ---------- */
+  .solution-features{
+    list-style:none;
+    margin:20px 0 26px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .solution-features li{
+    font-size:15.5px;
+    color:var(--ink);
+    font-weight:600;
+    display:flex;
+    gap:10px;
+  }
+  .solution-features li::before{content:"→";color:var(--green-dark);}
+  .mockup-card{
+    background:linear-gradient(160deg,#F0FDF4,var(--white));
+    border:1px solid #DCFCE7;
+    border-radius:18px;
+    padding:30px 24px;
+    text-align:center;
+    position:relative;
+    margin-bottom:30px;
+  }
+  .mockup-card .device-badge{
+    position:absolute;top:14px;right:14px;
+    background:#fff;border:1px solid #DCFCE7;
+    font-size:11.5px;font-weight:600;color:var(--green-dark);
+    padding:5px 10px;border-radius:999px;
+    font-family:'Poppins',sans-serif;
+  }
+  .mockup-phone{
+    width:120px;height:220px;
+    margin:10px auto 14px;
+    border-radius:22px;
+    background:var(--ink);
+    border:5px solid #1F2937;
+    position:relative;
+    box-shadow:0 18px 30px -12px rgba(17,24,39,0.4);
+  }
+  .mockup-phone::before{
+    content:"";
+    position:absolute;
+    top:16px;left:12px;right:12px;bottom:16px;
+    border-radius:10px;
+    background:linear-gradient(160deg,var(--green) 0%, var(--green-dark) 100%);
+  }
+  .mockup-phone::after{
+    content:"EN";
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    color:#fff;font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;
+  }
+  .mockup-caption{font-size:13.5px;color:#6B7280;}
+
+  /* ---------- Section 06: What you'll learn ---------- */
+  .learn-list{list-style:none;display:flex;flex-direction:column;}
+  .learn-list li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;color:var(--ink);
+    padding:14px 0;
+    border-bottom:1px solid #F3F4F6;
+  }
+  .learn-list li:last-child{border-bottom:none;}
+  .learn-list .ic{color:var(--green-dark);font-size:17px;flex-shrink:0;}
+  .closing-line{
+    margin-top:22px;
+    font-weight:600;
+    color:var(--ink);
+    font-size:15.5px;
+  }
+
+  /* ---------- Section 07: Pour qui ---------- */
+  .qualify-grid{display:flex;flex-direction:column;gap:16px;margin-top:24px;}
+  .qualify-card{border-radius:14px;padding:22px 20px;}
+  .qualify-card.yes{background:#F0FDF4;border:1px solid #BBF7D0;}
+  .qualify-card.no{background:#F9FAFB;border:1px solid #E5E7EB;}
+  .qualify-card h3{font-size:16.5px;font-weight:700;margin-bottom:14px;}
+  .qualify-card.yes h3{color:var(--green-dark);}
+  .qualify-card.no h3{color:#6B7280;}
+  .qualify-card ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .qualify-card li{font-size:14.5px;display:flex;gap:8px;color:var(--ink);}
+  .qualify-card.yes li::before{content:"✅";flex-shrink:0;}
+  .qualify-card.no li::before{content:"❌";flex-shrink:0;}
+
+  /* ---------- Testimonials ---------- */
+  .testimonial-grid{display:flex;flex-direction:column;gap:16px;margin-top:24px;}
+  .t-card{
+    background:#fff;
+    border:1px solid #F3F4F6;
+    border-radius:14px;
+    padding:20px;
+    box-shadow:0 2px 10px rgba(17,24,39,0.04);
+  }
+  .t-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+  .t-avatar{
+    width:46px;height:46px;border-radius:50%;
+    background:linear-gradient(135deg,var(--green-dark),var(--ink));
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;
+    flex-shrink:0;
+  }
+  .t-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:14.5px;color:var(--ink);}
+  .t-loc{font-size:13px;color:#6B7280;}
+  .t-stars{color:var(--amber);font-size:14px;margin-top:2px;}
+  .t-quote{font-size:14.5px;font-style:italic;color:var(--body-text);}
+
+  /* ---------- Bonus ---------- */
+  .bonus-card{
+    background:linear-gradient(165deg,#111827 0%, #1F2937 60%, #14532D 130%);
+    border-radius:18px;
+    padding:30px 24px;
+    color:#fff;
+  }
+  .bonus-card .badge{margin-bottom:16px;}
+  .bonus-card h2{color:#fff;}
+  .bonus-list{list-style:none;display:flex;flex-direction:column;gap:13px;margin:20px 0 20px;}
+  .bonus-list li{display:flex;gap:12px;font-size:15px;color:#E5E7EB;}
+  .bonus-list .emoji{font-size:18px;flex-shrink:0;}
+  .bonus-value{
+    border-top:1px solid rgba(255,255,255,0.12);
+    padding-top:16px;
+    font-size:13.5px;
+    color:#9CA3AF;
+  }
+  .bonus-value strong{color:#86EFAC;}
+
+  /* ---------- Main CTA blocks ---------- */
+  .cta-block{
+    text-align:center;
+    background:var(--ink);
+    border-radius:18px;
+    padding:36px 24px;
+    color:#fff;
+  }
+  .cta-block h2{color:#fff;font-size:clamp(20px,5.5vw,25px);margin-bottom:10px;}
+  .cta-block .sub{color:#D1D5DB;font-size:15px;margin-bottom:24px;}
+  .cta-included{
+    margin-top:16px;
+    font-size:13px;
+    color:#9CA3AF;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 14px;
+    justify-content:center;
+  }
+  .cta-final h2 .grey{color:#9CA3AF;font-weight:600;}
+
+  /* ---------- FAQ ---------- */
+  .faq{margin-top:22px;}
+  details{
+    background:#fff;
+    border:1px solid #E5E7EB;
+    border-radius:12px;
+    margin-bottom:10px;
+    overflow:hidden;
+  }
+  summary{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 18px;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:15px;
+    color:var(--ink);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";
+    font-size:20px;
+    color:var(--green-dark);
+    flex-shrink:0;
+    transition:transform .2s ease;
+  }
+  details[open] summary::after{transform:rotate(45deg);}
+  details[open] summary{border-bottom:1px solid #F3F4F6;}
+  .faq-body{padding:14px 18px 18px;font-size:14.5px;color:var(--body-text);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink);
+    color:#9CA3AF;
+    padding:40px 0 30px;
+    font-size:13px;
+    text-align:center;
+  }
+  footer .brand{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    color:#fff;
+    font-size:15px;
+    margin-bottom:10px;
+  }
+  footer a{color:#86EFAC;text-decoration:none;}
+  footer .legal{margin-top:16px;line-height:1.8;color:#6B7280;}
+
+  /* ---------- Sticky mobile CTA ---------- */
+  .sticky-cta{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:rgba(17,24,39,0.96);
+    backdrop-filter:blur(6px);
+    padding:10px 16px;
+    z-index:50;
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+  .sticky-cta .btn{padding:14px 20px;font-size:15.5px;box-shadow:none;}
+  @media(min-width:680px){
+    .sticky-cta{display:none;}
+    body{padding-bottom:0;}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .btn{transition:none;}
+  }
+
+  @media(min-width:680px){
+    section{padding:84px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SECTION 01 — HERO ============ -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <span class="badge on-dark">🟢 Méthode exclusive</span>
+    <h1>Tu as mis ton téléphone en <span class="lost">anglais</span>... et tu t'es perdu ?</h1>
+    <p class="subtitle">Ce guide t'accompagne pas à pas pour transformer ton smartphone en professeur d'anglais — sans te sentir dépassé.</p>
+    <p class="intro">Tu voulais progresser en anglais. Tu as suivi le conseil classique : <strong>« Passe ton téléphone en anglais. »</strong> Et là... tu ne retrouvais plus rien. Les menus étaient devenus une jungle. Tu as vite remis tout en français. Et ton niveau d'anglais est resté le même.<br><br><strong>Ce guide existe exactement pour ça.</strong></p>
+
+    <div class="price-row">
+      <span class="price-tag">5 000 <span>FCFA</span> · paiement unique</span>
+    </div>
+
+    <a href="#cta-principal" class="btn btn-wide">Je veux ma méthode — 5 000 FCFA <span class="btn-arrow">→</span></a>
+    <p class="micro-cta">Accès immédiat · Compatible iPhone & Android</p>
+  </div>
+</section>
+
+<p class="transition">Mais d'abord... dis-moi si ça te ressemble.</p>
+
+<!-- ============ SECTION 02 — IDENTIFICATION ============ -->
+<section class="bg-white" id="identification">
+  <div class="wrap">
+    <h2 class="title">Est-ce que tu te reconnais dans ça ?</h2>
+
+    <div class="frustration-list">
+      <div class="frustration-item"><span class="ic">❌</span>Tu as essayé de passer ton téléphone en anglais... et tu t'es perdu dans les menus.</div>
+      <div class="frustration-item"><span class="ic">❌</span>Tu ne comprenais plus certains réglages importants.</div>
+      <div class="frustration-item"><span class="ic">❌</span>Tu passais des minutes à chercher où cliquer.</div>
+      <div class="frustration-item"><span class="ic">❌</span>Tu avais peur de faire une mauvaise manipulation.</div>
+      <div class="frustration-item"><span class="ic">❌</span>Tu as fini par remettre tout en français.</div>
+      <div class="frustration-item"><span class="ic">❌</span>Et ton anglais n'a pas progressé d'un centimètre.</div>
+    </div>
+
+    <div class="validation-box">
+      Si tu t'es reconnu dans au moins <strong>3 de ces situations</strong>... ce n'est PAS ta faute. Le problème, ce n'est pas que tu es mauvais en anglais. Le problème, c'est que personne ne t'a accompagné pendant cette transition.
+    </div>
+  </div>
+</section>
+
+<p class="transition on-light">Et moi, je suis bien placé pour en parler... parce que j'ai vécu exactement ça.</p>
+
+<!-- ============ SECTION 03 — AVANT / APRÈS ============ -->
+<section class="bg-grey" id="avant-apres">
+  <div class="wrap">
+    <h2 class="title">Voilà où j'étais. Voilà où tu peux aller.</h2>
+
+    <div class="ba-grid">
+      <div class="ba-card before">
+        <div class="ba-label">❌ AVANT — Bloqué dans mon apprentissage</div>
+        <ul>
+          <li>Je traduisais tout mot à mot</li>
+          <li>J'oubliais rapidement</li>
+          <li>Je manquais de confiance</li>
+          <li>J'avais peur de me tromper</li>
+          <li>Je progressais trop lentement</li>
+          <li>Mon téléphone = distraction</li>
+        </ul>
+        <p class="ba-quote">« J'avais l'impression de faire beaucoup d'efforts pour très peu de résultats. »</p>
+      </div>
+
+      <div class="ba-card after">
+        <div class="ba-label">✅ APRÈS — Mon téléphone est devenu mon professeur d'anglais</div>
+        <ul>
+          <li>Plus de vocabulaire chaque jour</li>
+          <li>Immersion naturelle</li>
+          <li>Plus de confiance</li>
+          <li>Pratique quotidienne sans effort supplémentaire</li>
+          <li>Meilleure compréhension</li>
+          <li>Progression constante</li>
+        </ul>
+        <p class="ba-quote">« Aujourd'hui, chaque fois que j'utilise mon téléphone, j'améliore aussi mon anglais. »</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="transition on-light">Mais comment j'ai fait pour changer ? Laisse-moi te raconter mon histoire.</p>
+
+<!-- ============ SECTION 04 — HISTOIRE DU COACH ============ -->
+<section class="bg-white" id="histoire">
+  <div class="wrap">
+    <h2 class="title">J'ai vécu exactement ce que tu vis.</h2>
+
+    <div class="story-text">
+      <p>Un jour, j'ai décidé d'accélérer mon apprentissage d'une nouvelle langue. Le conseil revenait partout : <strong>« Change la langue de ton téléphone. »</strong> Alors je l'ai fait.</p>
+      <p>Et en quelques minutes... je ne retrouvais plus rien. Les menus étaient devenus incompréhensibles. Je passais du temps à chercher des réglages simples. Je me sentais perdu, lent, incompétent.</p>
+      <p>Alors j'ai remis la langue en français. Et là, j'ai réalisé quelque chose d'important : le problème, ce n'est pas le changement de langue. <strong>Le problème, c'est l'absence d'accompagnement pendant cette transition.</strong></p>
+      <p>C'est exactement pour résoudre ce problème que j'ai créé ce guide.</p>
+    </div>
+
+    <div class="coach-card">
+      <div class="coach-avatar">EFL</div>
+      <div>
+        <div class="coach-name">Coach d'anglais certifié TEFL</div>
+        <div class="coach-title">Fondateur de l'English Fluency Lab</div>
+        <div class="coach-line">« J'ai aidé des dizaines d'apprenants francophones à franchir ce cap. »</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="transition">Voilà ce que ce guide va changer pour toi concrètement.</p>
+
+<!-- ============ SECTION 05 — PRÉSENTATION SOLUTION ============ -->
+<section class="bg-white" id="solution">
+  <div class="wrap">
+    <h2 class="title">Voici ta méthode : le Guide de Survie pour booster ton anglais avec ton téléphone</h2>
+    <p style="font-weight:600;color:var(--ink);margin-bottom:18px;">Pas un ebook classique. Une méthode progressive, étape par étape.</p>
+    <p style="margin-bottom:6px;">Ce guide n'est pas un dictionnaire. Ce n'est pas une liste de vocabulaire. C'est une méthode concrète qui te montre comment :</p>
+
+    <ul class="solution-features">
+      <li>Passer ton téléphone en anglais sans te perdre</li>
+      <li>Maîtriser les menus essentiels rapidement</li>
+      <li>Intégrer l'anglais dans ton quotidien sans effort supplémentaire</li>
+      <li>Progresser chaque jour, juste en utilisant ton smartphone</li>
+    </ul>
+
+    <div class="mockup-card">
+      <span class="device-badge">📱 iPhone & Android</span>
+      <div class="mockup-phone"></div>
+      <p class="mockup-caption">17 pages · Applicable dès aujourd'hui</p>
+    </div>
+
+    <a href="#cta-principal" class="btn">Je veux ce guide maintenant — 5 000 FCFA</a>
+  </div>
+</section>
+
+<p class="transition on-light">Et concrètement, qu'est-ce que tu vas apprendre à l'intérieur ?</p>
+
+<!-- ============ SECTION 06 — CE QUE TU VAS APPRENDRE ============ -->
+<section class="bg-grey" id="apprendre">
+  <div class="wrap">
+    <h2 class="title">À l'intérieur du guide, tu vas apprendre à :</h2>
+
+    <ul class="learn-list">
+      <li><span class="ic">✅</span>Changer la langue de ton téléphone étape par étape, sans panique</li>
+      <li><span class="ic">✅</span>Maîtriser les menus essentiels d'iOS et Android en anglais</li>
+      <li><span class="ic">✅</span>Trouver rapidement les réglages importants sans perdre de temps</li>
+      <li><span class="ic">✅</span>Comprendre le vocabulaire des applications les plus utilisées</li>
+      <li><span class="ic">✅</span>Intégrer l'anglais dans ta routine quotidienne sans effort supplémentaire</li>
+      <li><span class="ic">✅</span>Progresser en vocabulaire chaque jour juste en utilisant ton téléphone</li>
+      <li><span class="ic">✅</span>Construire ta confiance en anglais progressivement</li>
+      <li><span class="ic">✅</span>Ne plus jamais remettre ton téléphone en français par frustration</li>
+    </ul>
+
+    <p class="closing-line">Tout ça, à ton rythme, avec ton téléphone que tu as déjà dans la poche.</p>
+  </div>
+</section>
+
+<p class="transition on-light">Et ce n'est pas tout. J'ai préparé quelque chose de plus pour toi.</p>
+
+<!-- ============ SECTION 07 — POUR QUI C'EST FAIT ============ -->
+<section class="bg-white" id="pour-qui">
+  <div class="wrap">
+    <h2 class="title">Pour qui c'est fait ?</h2>
+
+    <div class="qualify-grid">
+      <div class="qualify-card yes">
+        <h3>Ce guide est fait pour toi si...</h3>
+        <ul>
+          <li>Tu apprends l'anglais mais tu manques de régularité</li>
+          <li>Tu veux progresser sans ajouter du temps à ton emploi du temps</li>
+          <li>Tu as déjà essayé de passer ton téléphone en anglais et tu as vite abandonné</li>
+          <li>Tu veux une méthode simple, concrète et applicable immédiatement</li>
+          <li>Tu utilises ton téléphone plusieurs heures par jour</li>
+          <li>Tu es débutant ou intermédiaire en anglais</li>
+        </ul>
+      </div>
+
+      <div class="qualify-card no">
+        <h3>Ce guide n'est PAS fait pour toi si...</h3>
+        <ul>
+          <li>Tu cherches à apprendre l'anglais en 7 jours sans aucun effort</li>
+          <li>Tu maîtrises déjà parfaitement l'anglais</li>
+          <li>Tu n'utilises pas de smartphone au quotidien</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="transition">Voilà ce que d'autres ont dit après avoir appliqué la méthode.</p>
+
+<!-- ============ SECTION 08 — TÉMOIGNAGES ROUND 1 ============ -->
+<section class="bg-grey" id="temoignages-1">
+  <div class="wrap">
+    <h2 class="title">Ce que disent ceux qui ont déjà appliqué la méthode</h2>
+
+    <div class="testimonial-grid">
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">JB</div>
+          <div>
+            <div class="t-name">Jean-Baptiste M. — Cotonou, Bénin</div>
+            <div class="t-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="t-quote">« J'avais essayé plusieurs fois de passer mon téléphone en anglais. Je revenais toujours en français après 2 jours. Avec ce guide, j'ai tenu plus d'un mois et je comprends maintenant presque tous mes menus. »</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">AK</div>
+          <div>
+            <div class="t-name">Aïcha K. — Abidjan, Côte d'Ivoire</div>
+            <div class="t-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="t-quote">« Le guide explique tout étape par étape. Même sans bon niveau d'anglais au départ, j'ai pu suivre sans bloquer. Après 3 semaines, je repère beaucoup plus de mots dans mes applications. »</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">SD</div>
+          <div>
+            <div class="t-name">Serge D. — Dakar, Sénégal</div>
+            <div class="t-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="t-quote">« Ce qui m'a convaincu, c'est que ça ne demande pas de temps en plus. J'utilise déjà mon téléphone toute la journée — maintenant chaque minute compte pour mon anglais. »</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="transition on-light">Et avec tout ça, voici ce que tu obtiens pour 5 000 FCFA.</p>
+
+<!-- ============ SECTION 09 — BONUS STARTER PACK ============ -->
+<section class="bg-white" id="bonus">
+  <div class="wrap">
+    <div class="bonus-card">
+      <span class="badge">🎁 Bonus offert</span>
+      <h2 class="title">Starter Pack Anglais</h2>
+      <p style="color:#D1D5DB;font-size:15px;">Avec ton guide, tu reçois GRATUITEMENT :</p>
+
+      <ul class="bonus-list">
+        <li><span class="emoji">🎧</span>8 audios niveau débutant pour entraîner ton oreille à l'anglais réel</li>
+        <li><span class="emoji">📝</span>Des quiz pour tester tes connaissances à chaque étape</li>
+        <li><span class="emoji">✅</span>Les réponses aux quiz pour te corriger immédiatement</li>
+        <li><span class="emoji">📄</span>Les transcriptions complètes pour travailler la lecture ET l'écoute</li>
+        <li><span class="emoji">🚀</span>Un mini guide de démarrage pour commencer dès aujourd'hui</li>
+      </ul>
+
+      <p class="bonus-value"><strong>Valeur réelle de ce pack :</strong> inclus sans frais supplémentaires avec ton guide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 10 — CTA PRINCIPAL ============ -->
+<section class="bg-grey" id="cta-principal">
+  <div class="wrap">
+    <div class="cta-block">
+      <h2>OUI, JE VEUX TRANSFORMER MON TÉLÉPHONE EN PROFESSEUR D'ANGLAIS</h2>
+      <p class="sub">Accéder au guide maintenant pour 5 000 FCFA</p>
+      <a href="#" class="btn btn-wide" style="margin:0 auto;">Je commence maintenant <span class="btn-arrow">→</span></a>
+      <div class="cta-included">
+        <span>✅ Guide principal + Starter Pack inclus</span>
+        <span>✅ Accès immédiat</span>
+        <span>✅ iPhone & Android</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 11 — FAQ ============ -->
+<section class="bg-white" id="faq">
+  <div class="wrap">
+    <h2 class="title">Questions fréquentes</h2>
+
+    <div class="faq">
+      <details>
+        <summary>Est-ce que c'est un vrai guide ou juste un PDF quelconque ?</summary>
+        <div class="faq-body">C'est une méthode progressive de 17 pages, structurée étape par étape. Ce n'est pas une liste de vocabulaire. C'est un accompagnement concret pour transformer ton téléphone en outil d'apprentissage de l'anglais.</div>
+      </details>
+      <details>
+        <summary>Je suis débutant en anglais. Est-ce que ce guide est pour moi ?</summary>
+        <div class="faq-body">Oui, absolument. Le guide est conçu pour les apprenants de niveau débutant à intermédiaire. Tu n'as pas besoin de connaître l'anglais pour commencer — le guide t'explique tout en français.</div>
+      </details>
+      <details>
+        <summary>J'ai un Android. Est-ce que ça marche pour moi aussi ?</summary>
+        <div class="faq-body">Oui ! Le guide couvre à la fois iPhone (iOS) et Android. Les deux systèmes sont traités séparément avec des captures d'écran adaptées.</div>
+      </details>
+      <details>
+        <summary>Comment je reçois le guide après mon achat ?</summary>
+        <div class="faq-body">Dès ton paiement confirmé, tu reçois un lien de téléchargement immédiatement. Tu peux accéder au guide directement depuis ton téléphone ou ton ordinateur.</div>
+      </details>
+      <details>
+        <summary>Et si ça ne marche pas pour moi ?</summary>
+        <div class="faq-body">La méthode a été testée et validée par des dizaines d'apprenants. Si tu appliques les étapes, tu obtiendras des résultats. Ce que nous ne pouvons pas garantir, c'est que tu appliques la méthode à ta place.</div>
+      </details>
+      <details>
+        <summary>Pourquoi 5 000 FCFA et pas gratuit ?</summary>
+        <div class="faq-body">Un guide gratuit, on n'y accorde pas de valeur. On ne l'applique pas. Le prix de 5 000 FCFA est un engagement envers toi-même. Et pour ce prix, tu obtiens un guide + tout le Starter Pack audio. C'est un investissement, pas une dépense.</div>
+      </details>
+      <details>
+        <summary>Est-ce que le Starter Pack est vraiment offert ?</summary>
+        <div class="faq-body">Oui. Le Starter Pack (8 audios, quiz, transcriptions, mini guide) est inclus sans frais supplémentaires avec l'achat du guide principal.</div>
+      </details>
+      <details>
+        <summary>Je peux payer comment ?</summary>
+        <div class="faq-body">Mobile Money (MTN MoMo, Moov Money), Celtis Cash et carte bancaire sont disponibles sur la page de paiement.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<p class="transition on-light">Voilà ce que d'autres apprenants ont vécu en appliquant cette méthode.</p>
+
+<!-- ============ SECTION 12 — TÉMOIGNAGES ROUND 2 ============ -->
+<section class="bg-grey" id="temoignages-2">
+  <div class="wrap">
+    <h2 class="title">Ils ont franchi le cap. Toi aussi, tu peux.</h2>
+
+    <div class="testimonial-grid">
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">PM</div>
+          <div>
+            <div class="t-name">Pauline M. — Yaoundé, Cameroun</div>
+            <div class="t-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="t-quote">« Le prix m'a fait hésiter au début. Mais en comparant avec mon abonnement Duolingo que j'utilisais à peine, c'est largement rentabilisé en une semaine. »</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">FN</div>
+          <div>
+            <div class="t-name">Fabrice N. — Cotonou, Bénin</div>
+            <div class="t-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="t-quote">« J'ai testé plein de méthodes avant. Celle-ci est différente parce qu'elle ne demande pas de temps en plus dans ma journée. C'est ce qui a fait la différence pour moi. »</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 13 — CTA FINAL ============ -->
+<section class="bg-dark" id="cta-final" style="color:#fff;">
+  <div class="wrap">
+    <div class="cta-block cta-final" style="background:transparent;padding:0;">
+      <h2>Tu es encore là ? <span class="grey">C'est peut-être le signe que tu sais déjà que c'est pour toi.</span></h2>
+      <p class="sub">Rejoins les apprenants qui ont fait le choix de progresser enfin.</p>
+      <a href="#" class="btn btn-wide" style="margin:0 auto;">Je commence maintenant — 5 000 FCFA</a>
+      <div class="cta-included">
+        <span>🔒 Paiement sécurisé</span>
+        <span>📦 Livraison immédiate</span>
+        <span>📱 iPhone & Android</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 14 — FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="brand">English Fluency Lab</div>
+    <p>Le guide de survie pour booster ton anglais avec ton téléphone.</p>
+    <p class="legal">
+      © 2026 English Fluency Lab. Tous droits réservés.<br>
+      <a href="#">Mentions légales</a> · <a href="#">CGV</a> · <a href="#">Contact</a>
+    </p>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta">
+  <a href="#cta-principal" class="btn">Je veux ma méthode — 5 000 FCFA</a>
+</div>
+
+</body>
+</html>
